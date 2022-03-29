@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,24 +16,21 @@ function Navbar() {
                 </div>
                 <div className="w-full hidden flex-grow lg:flex lg:items-center lg:w-auto  ">
                         <div className="text-sm lg:flex-grow  ">
-                            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4">
-                            Hacer cita 
-                            </a>
-                            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0  text-white  hover:text-gray-400 mr-4">
-                            Ver calendario
-                            </a>
+                            <Link to="/" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4" >Inicio</Link>
+                            
+                            <Link to="/cita" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Cita </Link>
+                            
+                            <Link to="/calendario" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Ver Calendario </Link>
+                            
                         </div>
                     </div>
                 {
                     isOpen? ( 
                     <div className="w-full block flex-grow lg:hidden">
                         <div className="text-sm lg:flex-grow  ">
-                            <a href="#cita" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4">
-                            Hacer cita 
-                            </a>
-                            <a href="#calendar" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white  hover:text-gray-400 mr-4">
-                            Ver calendario
-                            </a>
+                            <Link to="/"  onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4" >Inicio</Link>
+                            <Link to="/cita" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Cita </Link>
+                            <Link to="/calendario" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Ver Calendario </Link>
                         </div>
                     </div>) : null 
                 }
