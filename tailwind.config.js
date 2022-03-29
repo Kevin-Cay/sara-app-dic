@@ -13,6 +13,7 @@ module.exports = {
             "red": "#942313",
             "black": "#1a1b1b",
             "gray": colors.gray,
+            "lime": colors.lime,
         }
     },
     variants: {

@@ -8,7 +8,7 @@ import {eventList} from '../json/events'
 
 function CalendarCard() {
     return (
-        <section id="calendar" className='container mx-auto dark:bg-white text-black mt-3 rounded-xl md:p-12 p-4 shadow-md min-h-fit max-w-5xl  box-border' >
+        <section id="calendar" className='container mx-auto dark:bg-white text-black mt-3 rounded-xl md:p-12 p-4 shadow-md  max-w-3xl  box-border' >
              <p className='text-3xl text-center font-bold' >Calendario </p>
              <div className="" >
             <FullCalendar
