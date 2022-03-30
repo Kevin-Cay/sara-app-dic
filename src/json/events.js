@@ -13,3 +13,17 @@ export const eventList = [
     { title: 'event 2', date: '2022-03-04' },
     { title: 'event 2', date: '2022-03-04' }
 ]
+
+export const services = {
+    "dama": {
+        5: ["Corte de cabello", "Depilación de rostro", "Depilación de ceja", "Depilación de pierna", "Depilación de axilas", "Peling Capilar", "Retirar gelish", "Retirar acrílico", "Pigmentación de ceja", "Pestañas postizas", "Tratamiento Capilar"],
+        10: ["Corte de cabello", "Depilación de rostro", "Depilación de ceja", "Depilación de pierna", "Depilación de axilas", "Peling Capilar", "Retirar gelish", "Retirar acrílico", "Pigmentación de ceja", "Pestañas postizas", "Tratamiento Capilar"],
+    },
+
+    "caballero": {
+        5: ["Corte de cabello", "Depilación de rostro", "Depilación de ceja", "Depilación de pierna", "Depilación de axilas", "Peling Capilar", "Retirar gelish", "Retirar acrílico", "Pigmentación de ceja", "Pestañas postizas", "Tratamiento Capilar"]
+    },
+    "nino": {
+        5: ["Corte de cabello"]
+    }
+}
