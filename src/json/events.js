@@ -27,3 +27,25 @@ export const services = {
         5: ["Corte de cabello"]
     }
 }
+
+export const horarios = {
+    "9:00": true,
+    "9:30": true,
+    "10:00": true,
+    "10:30": true,
+    "11:00": true,
+    "11:30": true,
+    "12:00": true,
+    "12:30": true,
+    "14:00": true,
+    "14:30": true,
+    "15:00": true,
+    "15:30": true,
+    "16:00": true,
+    "16:30": true,
+    "17:00": true,
+    "17:30": true,
+    "18:00": true,
+    "18:30": true,
+    "19:00": true,
+}

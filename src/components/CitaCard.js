@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {RiArrowDropDownLine} from 'react-icons/ri'
 import {services} from '../json/events'
+import {horarios} from '../json/events'
 
 function CitaCard() {
     const [genero, setGenero] = useState('dama');
@@ -8,12 +9,13 @@ function CitaCard() {
     today = today.toISOString().substr(0, 10);
     const [date, setDate] = useState(today);
     const [servicios, setServicios] = useState(services);
+    const [servicio, setServicio] = useState('');
     const [horarios, setHorarios] = useState([]);
     
-    // useEffect(() => {
-    //     console.log(genero)
+    useEffect(() => {
+        console.log(servicio)
 
-    // }, [genero])
+    }, [genero])
 
   return (
     <section id="cita" className="container md:mx-auto  bg-white text-black mt-5 rounded-xl sm:p-10 p-4 shadow-md max-w-3xl " >
@@ -56,27 +58,11 @@ function CitaCard() {
                     <input onChange={(e) => setDate(e.target.value)} value={date} min={today} required className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="date" placeholder="Fecha"  />
                     <p className="text-gray-600 text-xs italic">Recuerde que los domingos no está abierto.</p>
                     </div>
-                    <ServiciosTotales values={servicios} genero={genero} />
+                    <ServiciosTotales values={servicios} genero={genero} servicio={servicio} setServicio={setServicio} />
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-2">
-                   
-                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block  tracking-wide text-gray-700 text-xs font-bold mb-2" >
-                        Hora
-                    </label>
-                    <div className="relative">
-                        <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                        <option>Corte</option>
-                        <option>Planchado</option>
-                        <option>Tinte</option>
-                        <option>Pestañas</option>
-                        <option>Uñas</option>
-                        </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <RiArrowDropDownLine className=' fill-current h-6 w-8'  />
-                        </div>
-                    </div>
-                    </div>
+                   <HorariosDisponibles  horarios={horarios} />
+                    
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label className="block  tracking-wide text-gray-700 text-xs font-bold mb-2">
                         Teléfono <span className='text-gray-600 text-xs font-normal italic' >(opcional)</span>
@@ -100,21 +86,23 @@ function CitaCard() {
  * @param {object, string} param0 Objeto con los servicios y el genero 
  * @returns 
  */
-const ServiciosTotales = ({values, genero}) =>{
+const ServiciosTotales = ({values, genero, servicio, setServicio}) =>{
     let serviciosList = values[genero]
     let servicios = []
     Object.values(serviciosList).map(x=> servicios.push(...x))
     servicios = servicios.sort()
-    console.log(servicios)
+    const printSelect = (e)=>{
+        setServicio(e.target.value)
+    } 
     return(
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label className="block  tracking-wide text-gray-700 text-xs font-bold mb-2" >
             Servicio
         </label>
         <div className="relative">
-            <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <select onChange={printSelect}  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                 {
-                    servicios.map((x, i) => <option key={i}>{x}</option>)
+                    servicios.map((x, i) => <option   key={i}>{x}</option>)
                 }
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -125,5 +113,29 @@ const ServiciosTotales = ({values, genero}) =>{
     )
 }
 
+const HorariosDisponibles = ({horarios}) =>{
+    
+
+    return (
+        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label className="block  tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                        Hora
+                    </label>
+                    <div className="relative">
+                        <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                        <option>Corte</option>
+                        <option>Planchado</option>
+                        <option>Tinte</option>
+                        <option>Pestañas</option>
+                        <option>Uñas</option>
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <RiArrowDropDownLine className=' fill-current h-6 w-8'  />
+                        </div>
+                    </div>
+                    </div>
+    )
+
+}
 
 export default CitaCard

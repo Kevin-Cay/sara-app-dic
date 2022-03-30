@@ -8,7 +8,7 @@ import {eventList} from '../json/events'
 
 function CalendarCard() {
     return (
-        <section id="calendar" className='container mx-auto  bg-white text-black mt-3 rounded-xl md:p-12 p-4 shadow-md  max-w-3xl  box-border' >
+        <section id="calendar" className='container mx-auto  bg-white text-black mt-3 rounded-xl md:p-12 p-4 shadow-md   max-w-3xl  box-border' >
              <p className='text-3xl text-center font-bold' >Calendario </p>
              <div className="" >
             <FullCalendar
@@ -16,7 +16,7 @@ function CalendarCard() {
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             headerToolbar={{
               left: 'prev,next today',
-              center: 'title',
+              
               right: 'dayGridMonth,timeGridWeek,timeGridDay'
             }}
             eventTimeFormat={{hour: 'numeric',
@@ -32,6 +32,7 @@ function CalendarCard() {
             eventBorderColor='#1a1b1b'
             hiddenDays={[0]}
             events={eventList}
+            height='60vh'
             />
         </div>
         </section>

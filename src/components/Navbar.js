@@ -26,7 +26,7 @@ function Navbar() {
                             
                             <Link to="/cita" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Cita </Link>
                             
-                            <Link to="/calendario" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Ver Calendario </Link>
+                            <Link to="/calendario" className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Calendario </Link>
                             
                         </div>
                     </div>
@@ -36,7 +36,7 @@ function Navbar() {
                         <div className="text-md lg:flex-grow  ">
                             <Link to="/"  onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4" >Inicio</Link>
                             <Link to="/cita" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Cita </Link>
-                            <Link to="/calendario" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Ver Calendario </Link>
+                            <Link to="/calendario" onClick={() =>setIsOpen(false)} className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 mr-4"> Calendario </Link>
                         </div>
                     </div>) : null 
                 }

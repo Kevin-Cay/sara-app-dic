@@ -2,6 +2,8 @@ import React from 'react'
 
 function Home() {
     return (
+        <div className='mx-2'>
+
         <section id="header" className="container mx-auto bg-white text-black mt-3 rounded-xl md:p-12 p-8 shadow-md max-w-5xl ">
             <div className="md:flex justify-center">
                 <div className="md:shrink  md:w-96 w-64  ">
@@ -17,6 +19,7 @@ function Home() {
                 </div>
             </div>
         </section>
+        </div>
     )
 }
 
