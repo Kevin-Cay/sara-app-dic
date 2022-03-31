@@ -1,12 +1,12 @@
 import React from 'react'
 import CalendarCard from '../components/CalendarCard'
-import CitaCard from '../components/CitaCard'
+import CrearCitaCard from '../components/CrearCitaCard'
 
 function CitaView() {
     
     return (
         <div className='mx-2' >
-        <CitaCard />
+        <CrearCitaCard />
         <CalendarCard />
         </div>
     )
